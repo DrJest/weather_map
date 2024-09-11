@@ -2,7 +2,7 @@
 // @id             iitc-plugin-weather
 // @name           IITC plugin: Weather Map
 // @category       Layer
-// @version        0.1.8.20240911.001
+// @version        0.1.8.20240911.002
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/DrJest/weather_map/raw/master/weather.meta.js
 // @downloadURL    https://github.com/DrJest/weather_map/raw/master/weather.user.js
@@ -22,7 +22,7 @@
 function wrapper(plugin_info) {
 	if(typeof window.plugin !== 'function') window.plugin = function() {};
 	plugin_info.buildName = 'DrJest';
-	plugin_info.dateTimeVersion = '20240911.001';
+	plugin_info.dateTimeVersion = '20240911.002';
 	plugin_info.pluginId = 'weather';
 
 	// PLUGIN START ////////////////////////////////////////////////////////
@@ -331,6 +331,13 @@ function wrapper(plugin_info) {
 		}
 	};
 
+    window.plugin.weather.clear = function(e) {
+		window.plugin.weather.weatherLayer.clearLayers();
+		window.plugin.weather.weatherLegendLayer.clearLayers();
+
+		$("#sumbox-weather").empty();
+    }
+
 	window.plugin.weather.onCellClick = function(e) {
 		var team    = '';
 		var pteam   = '';
@@ -413,6 +420,7 @@ function wrapper(plugin_info) {
 				summbox += '</select><br />';
 				summbox += '<button class="weather-button" onclick="window.plugin.weather.selectCheckPoint();">Show CP</button> ';
 				summbox += '<button class="weather-button" onclick="window.plugin.weather.queueTimer();">CP Timeline</button>';
+                summbox += '<button class="weather-button" onclick="window.plugin.weather.clear();">Clear</button>';
 				summbox += '</p>';
 			}
 		}
