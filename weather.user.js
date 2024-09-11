@@ -2,12 +2,12 @@
 // @id             iitc-plugin-weather
 // @name           IITC plugin: Weather Map
 // @category       Layer
-// @version        0.1.8.20160726.001
+// @version        0.1.8.20240911.001
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      https://github.com/ryantheleach/weather_map/raw/master/weather.meta.js
-// @downloadURL    https://github.com/ryantheleach/weather_map/raw/master/weather.user.js
-// @installURL     https://github.com/ryantheleach/weather_map/raw/master/weather.user.js
-// @description    [hurqalia22-2016-07-26-001] Weather Map
+// @updateURL      https://github.com/DrJest/weather_map/raw/master/weather.meta.js
+// @downloadURL    https://github.com/DrJest/weather_map/raw/master/weather.user.js
+// @installURL     https://github.com/DrJest/weather_map/raw/master/weather.user.js
+// @description    [DrJest-2024-09-11-001] Weather Map
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -21,8 +21,8 @@
 
 function wrapper(plugin_info) {
 	if(typeof window.plugin !== 'function') window.plugin = function() {};
-	plugin_info.buildName = 'hurqalia22';
-	plugin_info.dateTimeVersion = '20160726.001';
+	plugin_info.buildName = 'DrJest';
+	plugin_info.dateTimeVersion = '20240911.001';
 	plugin_info.pluginId = 'weather';
 
 	// PLUGIN START ////////////////////////////////////////////////////////
@@ -53,8 +53,8 @@ function wrapper(plugin_info) {
 		KEYS_PREFS_PLUGIN   : 'plugin-weather-pref',
 		KEYS_PREFS_COUNTRY  : 'plugin-weather-pref-country',
 		KEYS_DATAS_COUNTRY  : 'plugin-weather-datas-country',
-		URL_LIST_COUNTRY    : 'https://raw.githubusercontent.com/ryantheleach/weather_map/master/countries.prefs',
-		URL_DATAS_COUNTRY   : 'https://raw.githubusercontent.com/ryantheleach/weather_map/master/countries/',
+		URL_LIST_COUNTRY    : 'https://raw.githubusercontent.com/DrJest/weather_map/master/countries.prefs',
+		URL_DATAS_COUNTRY   : 'https://raw.githubusercontent.com/DrJest/weather_map/master/countries/',
 		is_country_selected : false,
 		is_country_loaded   : false,
 		current_key         : '',
